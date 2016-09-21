@@ -1,0 +1,92 @@
+.sidemenu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    bottom: 0;
+    z-index: 999;
+    width: 260px;
+    height: 100%;
+    background: #000;
+    box-shadow: 12px 0px 150px 0px rgba(0,0,0,0);
+    transition: all .2s ease-out;
+    overflow-y: scroll;
+
+    &.sidemenu-open {
+        left: 0;
+        border-right: 1px solid @cBorder;
+    }
+
+    .sidemenu-in {
+        padding: 40px;
+
+        .sidemenu-logo {
+            width: 70px;
+            padding-bottom: 10px;
+        }
+
+        .sidemenu-group {
+            margin-top: 40px;
+            color: @cMain;
+
+            .sidemenu-group-title {
+                margin-bottom: 5px;
+                color: inherit;
+            }
+
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+
+                li {
+                    display: block;
+                    padding: 15px 0 0 0;
+
+                    span {
+                        display: inline-block;
+                        color: @cMain;
+                        position: relative;
+                        top: -5px;
+                        left: 15px;
+
+                        label {
+                            color: @cMain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidemenu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 998;
+    width: 0;
+    background: #fff;
+    opacity: 0;
+    transition: opacity .2s ease-out;
+
+    &.sidemenu-overlay-open {
+        width: 100%;
+        opacity: .7;
+    }
+}
+
+// for animation
+.sidemenu-in {
+    position: relative;
+    left: -40px;
+    opacity: 0;
+    transition: all .4s ease-out;
+}
+
+&.sidemenu-open {
+    .sidemenu-in {
+        left: 0;
+        opacity: 1;
+    }
+}

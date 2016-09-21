@@ -1,0 +1,79 @@
+.nugo-check {
+	.nuGo_check(@activeColor: @cDeco, @borderColor: #333, @bgColor: @cInverse, @activeCheck: @cInverse);
+}
+
+.nuGo_check(
+	@size: 20px,
+	@radius: 2px,
+	@bgColor: #fff,
+	@borderColor: #ccc,
+	@borderSize: 1px,
+	@activeColor: #39d120,
+	@activeCheck: #fff,
+	@spanPadding: 10px,
+	@transition: 200ms
+){
+	position: relative;
+	display: inline-block;
+	min-width: @size;
+	min-height: @size;
+	// line-height: @size;
+
+	input { display: none; }
+
+	>div {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: @size;
+		height: @size;
+		box-sizing: border-box;
+		border-radius: @radius;
+		border: @borderSize solid @borderColor;
+		background: @bgColor;
+		transition: all @transition;
+
+		div {
+			position: absolute;
+			top: @size/4 - @borderSize + @size/30;
+			left: @size/4 - @borderSize + @size/15;
+			width: @size/2 - @size/10;
+			height: @size/2 - @size/5;
+			transform: rotate(-45deg) scale(0);
+			transition: all @transition;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				background: @activeCheck;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: @activeCheck;
+			}
+		}
+	}
+
+	input:checked ~ div {
+		border: @borderSize solid @activeColor;
+		background: @activeColor;
+		div { transform: rotate(-45deg) scale(1); }
+	}
+
+	span {
+        position: relative;
+        top: 1px;
+		padding-left: @size+@spanPadding;
+        color: @cMain;
+	}
+}

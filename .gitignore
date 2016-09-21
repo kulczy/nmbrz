@@ -1,0 +1,6 @@
+nmbrz/node_modules
+.cordova
+hooks
+platforms
+plugins
+.DS_Store

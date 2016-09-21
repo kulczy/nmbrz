@@ -1,0 +1,110 @@
+.navbarButtonsStyles {
+    position: absolute;
+    top: 0;
+    width: @navbarHeight;
+    height: @navbarHeight;
+    line-height: @navbarHeight;
+    text-align: center;
+    font-family: 'ion';
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: @navbarHeight;
+    line-height: @navbarHeight;
+    background: @cMain;
+    color: @fColor;
+    box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.2);
+    overflow: hidden;
+
+    .search-btn {
+        .navbarButtonsStyles;
+        left: 0;
+        transition: all .5s;
+    }
+
+    .add-btn {
+        .navbarButtonsStyles;
+        right: 0;
+        transform: rotate(0deg);
+        transition: all .5s;
+
+        &.cancel-btn {
+            transform: rotate(45deg);
+        }
+    }
+
+    .logo {
+        width: 89px;
+        height: @navbarHeight;
+        margin: 0 auto;
+        padding-top: 4px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: -10%;
+        top: 50%;
+        transform: translateY(-50%) scale(0);
+        z-index: 99;
+        width: 120%;
+        padding-top: 120%;
+        border-radius: 100%;
+        background: @cInverse;
+        transition: all .5s;
+    }
+
+    // active search bar styles
+    .search-wrapper {
+        position: absolute;
+        top: 0;
+        z-index: 199;
+        width: 100%;
+        padding-left: @navbarHeight;
+        padding-right: @navbarHeight;
+        color: @cMain;
+        opacity: 0;
+        transition: all .5s;
+
+        .search {
+            width: 100%;
+            height: @navbarHeight;
+
+            .search-close-btn {
+                .navbarButtonsStyles;
+                right: 0;
+                color: @cMain;
+            }
+
+            input {
+                background: none;
+                position: relative;
+                bottom: 2px;
+                width: 100%;
+                height: @navbarHeight - 20px;
+                padding: 0;
+                border: none;
+                outline: none;
+                color: @cMain;
+            }
+        }
+    }
+
+    &.navbar-search {
+        .search-btn { left: -20px; }
+        .add-btn { right: -20px; }
+        &::after {
+            transform: translateY(-50%) scale(1);
+        }
+        .search-wrapper {
+            padding-left: @navbarHeight/2;
+            opacity: 1;
+        }
+    }
+}

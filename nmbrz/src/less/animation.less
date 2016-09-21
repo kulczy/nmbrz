@@ -1,0 +1,55 @@
+.anim-listitem-mixin(anim-listitem);
+.anim-listitem-mixin(@curr) {
+    .@{curr}-enter {
+        height: 0;
+    }
+    .@{curr}-enter.@{curr}-enter-active {
+        height: @itemHeight;
+        transition: height .3s ease-out;
+    }
+    .@{curr}-leave {
+        height: @itemHeight;
+    }
+    .@{curr}-leave.@{curr}-leave-active {
+        height: 0;
+        transition: height .3s ease-out;
+    }
+    .@{curr}-appear {
+        margin-bottom: 30px;
+        opacity: 0;
+    }
+    .@{curr}-appear.@{curr}-appear-active {
+        margin-bottom: 0;
+        opacity: 1;
+        transition: all .2s ease-out;
+    }
+}
+
+.animation-list, .animation-edit {
+    position: absolute;
+    top: @navbarHeight;
+    width: 100%;
+    background: @cMain;
+}
+
+.anim-transition-mixin(anim-transition);
+.anim-transition-mixin(@curr) {
+    .@{curr}-enter {
+        transform: translateY(50px);
+        opacity: 0;
+        transition: all .2s ease-out;
+    }
+    .@{curr}-enter.@{curr}-enter-active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .@{curr}-leave {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all .2s ease-out;
+    }
+    .@{curr}-leave.@{curr}-leave-active {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}

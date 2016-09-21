@@ -1,0 +1,82 @@
+.nmbrz-docs {
+    font-family: 'Roboto', sans-serif;
+}
+
+@media all and (max-width: 767px) {
+    .docs-info {
+        text-align: center;
+    }
+}
+
+.docs-logo {
+    display: inline-block;
+    box-shadow: 0px 10px 48px 0px rgba(0,0,0,0.12);
+    border-radius: 20px;
+    margin-top: 80px;
+}
+
+.docs-name {
+    margin-top: 50px;
+}
+
+.docs-name h1 {
+    color: #000;
+    line-height: 70px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.docs-buttons {
+    margin: 50px 0;
+}
+
+.docs-buttons a:link, .docs-buttons a:visited {
+    display: inline-block;
+    background: #000;
+    padding: 20px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.docs-buttons a:hover {
+    color: #000;
+    background: #fff;
+    box-shadow: 0px 10px 48px 0px rgba(0,0,0,0.12);
+    text-decoration: none;
+}
+
+.docs-note span {
+    color: red;
+}
+
+.docs-demo {
+    position: relative;
+    width: 100%;
+    height: 850px;
+    text-align: center;
+    background: url('img/phone.png') center top no-repeat;
+    margin-top: 50px;
+}
+
+.docs-preview {
+    position: relative;
+    top: 72px;
+    width: 334px;
+    height: 595px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #fff;
+    text-align: left;
+    overflow-y: hidden;
+}
+
+.docs-preview iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden
+}

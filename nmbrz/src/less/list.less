@@ -1,0 +1,14 @@
+.list {
+    position: relative;
+
+    .list-empty-wrapper {
+        min-height: calc(~'100vh - ' @navbarHeight);
+        line-height: calc(~'100vh - ' @navbarHeight * 2);
+
+        .list-empty {
+            font-size: 30px;
+            text-align: center;
+            color: @cSub;
+        }
+    }
+}

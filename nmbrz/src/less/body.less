@@ -1,0 +1,48 @@
+* {
+    font-family: @fFamily;
+    font-size: @fSize;
+    color: @fColor;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    cursor: default !important;
+
+    &:link, &:visited {
+        color: @fColor;
+        text-decoration: none;
+    }
+    &:hover {
+        color: @fColor;
+    }
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background: @cMain;
+}
+
+button {
+    cursor: default !important;
+    border: 0;
+    background: none;
+    outline: 0;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+
+    &:hover, &:active {
+        border: 0;
+        background: none;
+        outline: 0;
+        box-shadow: none;
+    }
+}

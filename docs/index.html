@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NMBRZ</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container nmbrz-docs">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5 col-lg-offset-1 docs-info">
+                <div class="docs-logo"><img src="img/nmbrz-ico.png" alt="nmbrz" /></div>
+                <div class="docs-name"><h1>Simple<br> Counter<br> App</h1></div>
+                <div class="docs-buttons"><a href="https://github.com/kulczy/numbrs">view on github</a></div>
+                <div class="docs-note">* This is just an iframe demonstration.<br><span>Works in Chrome only!</span></div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+                <div class="docs-demo">
+                    <div class="docs-preview">
+                        <iframe src="demo.html" scrolling="no"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        if (localStorage.getItem('nugato:nmbrz.list').length < 5) {
+            console.log('elo');
+            localStorage.setItem('nugato:nmbrz.list', '[{"id":1474484639390,"name":"Game of thrones","description":"Season 2","number":10,"done":true},{"id":1474484658877,"name":"Jessica Jones","description":"Season 1","number":6,"done":false},{"id":1474484669554,"name":"Elementary","description":"Season 3","number":15,"done":false},{"id":1474484683907,"name":"Narcos","description":"Season 2","number":5,"done":false},{"id":1474484705443,"name":"Flash","description":"Season 3","number":3,"done":false},{"id":1474484741963,"name":"Homeland","description":"Season 2","number":7,"done":false},{"id":1474484772955,"name":"Big bang theory","description":"Season 5","number":5,"done":false},{"id":1474484971402,"name":"Supernatural","description":"Season 6","number":13,"done":false},{"id":1474485030058,"name":"Walking dead","description":"Season 3","number":2,"done":false}]');
+        }
+    </script>
+
+    <script src="main.min.js"></script>
+</body>
+</html>

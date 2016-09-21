@@ -1,0 +1,150 @@
+.input-wrapper {
+    position: relative;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 @navbarHeight/2;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .input-txt {
+        width: calc(~'100% - 100px');
+        display: inline-block;
+        height: 70px;
+
+        .checkbox-switch {
+            top: 8px;
+        }
+    }
+
+    input:not([type='checkbox']) {
+        width: calc(~'100% - 100px');
+        display: inline-block;
+        height: 50px;
+        line-height: 50px;
+        border: none;
+        outline: 0;
+        transition: all .5s;
+    }
+
+    .input-after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        width: 100%;
+        height: 1px;
+        background: @cBorder;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 0;
+            height: 100%;
+            background: @cDeco;
+            transition: all .5s;
+        }
+    }
+
+    label {
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+        color: @cSub;
+    }
+
+    // animate focus effect
+    input:not([type='checkbox']):focus {
+        width: 100%;
+
+        ~ .input-after::after {
+            width: 100%;
+        }
+    }
+}
+
+.checkbox-switch {
+    position: relative;
+    display: inline-block;
+    width: 45px !important;
+    height: 26px;
+    border-radius: 26px;
+    overflow: hidden;
+
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: none;
+    }
+
+    div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: @cBorder;
+        border-radius: 26px;
+        transition: all .3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            background: @cMain;
+            transition: all .3s;
+        }
+    }
+
+    input:checked ~ div {
+        background: @cDeco;
+
+        &::after {
+            left: 20px;
+        }
+    }
+}
+
+.edit-btn-wrapper {
+    padding: 0 @navbarHeight/2;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.editButtons {
+    width: 100%;
+    height: 40px;
+    background: none;
+    border: 1px solid @fColor;
+    border-radius: 40px;
+    color: @fColor;
+    margin-bottom: 15px;
+}
+
+.btn-delete {
+    .editButtons;
+    width: auto;
+    height: auto;
+    padding: 3px 15px;
+    color: #c6052d;
+    border: none;
+}
+
+.btn-save {
+    .editButtons;
+    color: @cDeco;
+    border-color: @cDeco;
+
+    &:active, &:hover {
+        background: @cDeco;
+        color: @cMain;
+    }
+}
