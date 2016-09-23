@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base src --inline --hot"
+    "start": "webpack-dev-server --content-base www --inline --hot"
   },
   "keywords": [],
   "author": "",

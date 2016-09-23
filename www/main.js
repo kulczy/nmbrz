@@ -1,5 +1,3 @@
-const developer_mode = true // for cordova
-
 import './less/index.less' // less
 import React from 'react' // react
 import { render } from 'react-dom';
@@ -23,4 +21,4 @@ function startApp() {
     ), document.getElementById('nmbrz'))
 }
 
-developer_mode ? startApp() : document.addEventListener('deviceready', startApp, false);
+window.location.pathname == '/dev.html' ? startApp() : document.addEventListener('deviceready', startApp, false);

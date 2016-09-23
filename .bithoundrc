@@ -1,6 +1,10 @@
 {
   "ignore": [
     "docs/**",
-    "nmbrz/**"
+    "www/components/**",
+    "www/less/**",
+    "www/store/**",
+    "www/dev.html",
+    "www/main.js"
   ]
 }
