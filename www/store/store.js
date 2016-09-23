@@ -22,8 +22,8 @@ class ListStore {
     @observable list = []
     @observable filter = ''
     @observable search = false
-    @observable sort = ''
-    @observable doneEnd = ''
+    @observable sort = 'a-z'
+    @observable doneEnd = true
 
     @computed get filteredList() {
 
